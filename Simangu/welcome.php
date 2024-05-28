@@ -185,7 +185,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <a href="logout.php" class="logout"></i> Log out</a>
         </div>
         <div class="main-content">
-            <a href="">
+            <a href="statusbarang.php">
             <div class="card">
                 <img src="kardus_list.png" alt="Status Barang">
                 <h3>Status Barang</h3>

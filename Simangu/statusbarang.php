@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Status Pesanan</title>
+    <title>Status Pesanan</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -103,107 +103,119 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        .form-wrapper {
+        .table-container {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
+            max-width: 1000px;
+            position: relative; 
         }
 
         .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 60px; 
             background-color: #0a387e;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            border-top-left-radius: 10px; 
+            border-top-right-radius: 10px; 
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .header h2 {
-            color: #ffffff;
-            margin: 0;
+            color: #ffffff; 
+            margin: 0; 
         }
 
-        .form-content {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-top: 80px;
+        .table-container .table-controls,
+        .table-container table,
+        .table-container .btn,
+        .table-container .table-footer {
+            margin-top: 80px; 
         }
 
-        .form-group {
+        .table-controls {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .form-group label {
-            flex: 1;
+        .table-controls .entries {
+            display: flex;
+            align-items: center;
+        }
+
+        .table-controls .entries label {
+            margin-right: 10px;
             color: #333;
         }
 
-        .form-group input,
-        .form-group select {
-            flex: 2;
-            padding: 10px;
+        .table-controls .entries select {
+            padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin-left: 10px;
         }
 
-        .form-group input[type="date"] {
-            padding: 9px 10px;
-        }
-
-        .status-group {
+        .table-controls .search {
             display: flex;
-            justify-content: flex-start; 
             align-items: center;
-            margin-bottom: 10px;
+        }
+
+        .table-controls .search label {
+            margin-right: 10px;
+            color: #333;
+        }
+
+        .table-controls .search input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        table {
             width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
             text-align: left;
         }
 
-        .status-group label {
-            flex: 1;
-            color: #333;
-            margin-right:10px;
+        th {
+            background-color: #396ebd;
+            color: white;
         }
 
-        .status-group input {
-            margin: 0;
-        }
-
-        .btn-submit {
-            background-color: #0a387e;
+        .btn {
+            background-color: #396ebd;
             color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            width: 100px;
-            margin-top: 20px;
-            display: block;
-            margin: center;
+            text-decoration: none;
+            margin: 5px;
         }
 
-        .btn-submit:hover {
+        .btn:hover {
             background-color: #315a9d;
+        }
+
+        .action-buttons a {
+            margin: 0 5px;
         }
 
         .back-to-home {
@@ -213,12 +225,20 @@
 
         .back-to-home a {
             text-decoration: none;
-            color: #fff;
+            color: #396ebd;
             transition: color 0.3s ease;
         }
 
         .back-to-home a:hover {
             color: #315a9d;
+        }
+
+        .table-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            color: #333;
         }
     </style>
 </head>
@@ -238,41 +258,55 @@
         <a href="logout2.php" class="logout"> Log out</a>
     </div>
     <div class="main-content">
-        <div class="form-wrapper">
+        <div class="table-container">
             <div class="header">
-                <h2>INPUT STATUS PESANAN</h2>
+                <h2>Status Pesanan</h2>
             </div>
-            <div class="form-content">
-                <div class="form-group">
-                    <label for="id-barang">ID Barang</label>
-                    <input type="text" id="id-barang" name="id-barang" placeholder="">
+            <div class="table-controls">
+                <div class="entries">
+                    <label for="entries">Show</label>
+                    <select id="entries">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <label for="entries">entries</label>
                 </div>
-                <div class="form-group">
-                    <label for="kategori">Kategori</label>
-                    <input type="text" id="kategori" name="kategori" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="nama-barang">Nama Barang</label>
-                    <input type="text" id="nama-barang" name="nama-barang" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="tanggal-masuk">Tanggal Masuk</label>
-                    <input type="date" id ="tanggal-masuk" name="tanggal-masuk">
-                </div>
-                <div class="form-group">
-                    <label for="lokasi">Lokasi</label>
-                    <input type="text" id="lokasi" name="lokasi" placeholder="">
+                <div class="search">
+                    <label for="search">Search:</label>
+                    <input type="text" id="search">
                 </div>
             </div>
-            <div class="status-group">
-                <label for="status">Status</label>
-                <input type="checkbox" id="digudang" name="status" value="digudang"> Digudang
-                <input type="checkbox" id="telah-diambil" name="status" value="telah-diambil"> Telah Diambil
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Barang</th>
+                        <th>KodeBarang</th>
+                        <th>Tanggal Masuk</th>
+                        <th>Lokasi</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Buku Pelajaran</td>
+                        <td>12345</td>
+                        <td>2023-07-18</td>
+                        <td>Gudang H</td>
+                        <td style="background-color: #4CAF50; color: white; text-align: center;">Digudang</td>
+                    </tr>
+                    <!-- Tambahkan baris lain di sini -->
+                </tbody>
+            </table>
+            <div class="table-footer">
+                <div class="info">Showing 1 to 1 of 1 entries</div>
             </div>
-            <button class="btn-submit">Input</button>
         </div>
         <div class="back-to-home">
-            <a href="welcome2.php"><u>Back to Home</u></a>
+            <a href="welcome2.php">Back to Home</a>
         </div>
     </div>
 </div>

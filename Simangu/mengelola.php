@@ -105,23 +105,40 @@
             align-items: center;
         }
 
-        .main-content .table-container {
+        .table-container {
             background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
             max-width: 1000px;
+            position: relative; 
         }
 
-        .table-container h2 {
-            margin-bottom: 20px;
-            color: #ffffff;
+        .header {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 60px; 
             background-color: #0a387e;
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
+            border-top-left-radius: 10px; 
+            border-top-right-radius: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header h2 {
+            color: #ffffff; 
+            margin: 0; 
+        }
+
+        .table-container .table-controls,
+        .table-container table,
+        .table-container .btn,
+        .table-container .table-footer {
+            margin-top: 80px; 
         }
 
         .table-controls {
@@ -242,7 +259,9 @@
     </div>
     <div class="main-content">
         <div class="table-container">
-            <h2>LAPORAN</h2>
+            <div class="header">
+                <h2>LAPORAN</h2>
+            </div>
             <div class="table-controls">
                 <div class="entries">
                     <label for="entries">Show</label>

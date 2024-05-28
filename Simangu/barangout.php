@@ -116,6 +116,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
         .form-wrapper h2 {
@@ -125,7 +126,11 @@
             width: 100%;
             text-align: center;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            margin: 0;
         }
 
         .form-content {
@@ -133,6 +138,7 @@
             flex-direction: column;
             width: 100%;
             margin-bottom: 20px;
+            padding-top: 40px;
         }
 
         .form-group {
@@ -162,6 +168,7 @@
 
         .table-wrapper {
             width: 100%;
+            margin-bottom: 20px;
         }
 
         table {
@@ -194,7 +201,8 @@
             width: 100px;
             margin-top: 20px;
             display: block;
-            margin:center;
+            margin: auto;
+            margin-bottom:20px;
         }
 
         .btn-submit:hover {
@@ -211,9 +219,9 @@
             color: #fff;
             transition: color 0.3s ease;
         }
-        
-        .back-to-home  u {
-            color:white;
+
+        .back-to-home u {
+            color: white;
         }
 
         .back-to-home a:hover {
@@ -242,23 +250,23 @@
                 <div class="form-content">
                     <div class="form-group">
                         <label for="id-barang">ID Barang</label>
-                        <input type="text" id="id-barang" name="id-barang" value="">
+                        <input type="text" id="id-barang" name="id-barang" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="kategori">Kategori</label>
-                        <input type="text" id="kategori" name="kategori" value="">
+                        <input type="text" id="kategori" name="kategori" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="nama-barang">Nama Barang</label>
-                        <input type="text" id="nama-barang" name="nama-barang" value="">
+                        <input type="text" id="nama-barang" name="nama-barang" placeholder="">
                     </div>
                     <div class="form-group">
                         <label for="tanggal-masuk">Tanggal Masuk</label>
-                        <input type="date" id="tanggal-masuk" name="tanggal-masuk" value="">
+                        <input type="date" id="tanggal-masuk" name="tanggal-masuk">
                     </div>
                     <div class="form-group">
                         <label for="tanggal-keluar">Tanggal Keluar</label>
-                        <input type="date" id="tanggal-keluar" name="tanggal-keluar" value="">
+                        <input type="date" id="tanggal-keluar" name="tanggal-keluar">
                     </div>
                 </div>
                 <div class="table-wrapper">

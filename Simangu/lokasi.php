@@ -116,6 +116,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
         .form-wrapper h2 {
@@ -125,7 +126,11 @@
             width: 100%;
             text-align: center;
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-100%);
         }
 
         .form-content {
@@ -133,6 +138,7 @@
             flex-direction: column;
             width: 100%;
             margin-bottom: 20px;
+            padding-top: 30px; 
         }
 
         .form-group {
@@ -169,7 +175,7 @@
             cursor: pointer;
             width: 100px;
             margin-top: 20px;
-            align-items: center;
+            display: block;
             margin: auto;
         }
 
@@ -189,7 +195,7 @@
         }
         
         .back-to-home u {
-            color:white;
+            color: white;
         }
 
         .back-to-home a:hover {

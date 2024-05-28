@@ -116,23 +116,33 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
         }
 
-        .form-wrapper h2 {
-            margin-bottom: 20px;
-            color: #ffffff;
-            background-color: #0a387e;
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
+            height: 60px;
+            background-color: #0a387e;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header h2 {
+            color: #ffffff;
+            margin: 0;
         }
 
         .form-content {
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin-bottom: 20px;
+            margin-top: 80px;
         }
 
         .form-group {
@@ -194,7 +204,7 @@
             width: 100px;
             margin-top: 20px;
             display: block;
-            margin:center;
+            margin: center;
         }
 
         .btn-submit:hover {
@@ -212,8 +222,8 @@
             transition: color 0.3s ease;
         }
 
-        .back-to-home  u {
-            color:white;
+        .back-to-home u {
+            color: white;
         }
 
         .back-to-home a:hover {
@@ -238,7 +248,9 @@
         </div>
         <div class="main-content">
             <div class="form-wrapper">
-                <h2>INPUT BARANG MASUK</h2>
+                <div class="header">
+                    <h2>INPUT BARANG MASUK</h2>
+                </div>
                 <div class="form-content">
                     <div class="form-group">
                         <label for="id-barang">ID Barang</label>
